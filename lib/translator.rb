@@ -4,17 +4,25 @@ require 'yaml'
 def load_library(yml)
   # code goes here
   emoticons = YAML.load_file("lib/emoticons.yml")
-  puts emoticons
-  
-  emoticons.each do |element|
-    element.each do |key, details|
-      details.each do |eng, jap|
-        
-      end 
+
+  def setup_hash(hash)
+    new_hash = {}
+    new_hash["get_meaning"] = {}
+    new_hash["get_emoticon"] = {}
+    #get_meaning
+    hash.each do|key, array|
+      new_hash["get_meaning"][array[1]] = key
+    end
+    #get_emoticon
+    hash.each do|key, array|
+      new_hash["get_emoticon"][array[0]] = array[1]
     end 
+    new_hash
   end 
   
-  emoticons
+  new_hash = setup_hash(emoticons)
+  new_hash
+
 end
 
 def get_japanese_emoticon
