@@ -31,7 +31,7 @@ def get_japanese_emoticon(yaml, emoticon)
   if hash["get_emoticon"].include?(emoticon)
     hash["get_emoticon"][emoticon]
   else 
-    puts "Sorry, that emoticon was not found"
+    "Sorry, that emoticon was not found"
   end 
 end
 
