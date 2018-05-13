@@ -38,5 +38,9 @@ end
 def get_english_meaning(yaml, emoticon)
   # code goes here
   hash = load_library(yaml)
-  
+  if hash["get_meaning"].include?(emoticon)
+    hash["get_meaning"][emoticon]
+  else 
+    "Sorry, that emoticon was not found"
+  end 
 end
