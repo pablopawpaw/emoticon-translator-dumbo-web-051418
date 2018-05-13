@@ -25,8 +25,10 @@ def load_library(yml)
 
 end
 
-def get_japanese_emoticon
+def get_japanese_emoticon(yaml, emoticon)
   # code goes here
+  load_library(yml)
+  
 end
 
 def get_english_meaning
